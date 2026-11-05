@@ -1,0 +1,174 @@
+.grade-compare {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  user-select: none;
+  border: 1px solid rgba(139, 137, 130, 0.28);
+  background-color: var(--ink-950);
+}
+
+.grade-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.grade-layer.raw {
+  filter: saturate(0.35) contrast(0.82) brightness(1.08);
+}
+
+.grade-layer.graded {
+  filter: saturate(1.25) contrast(1.15);
+  clip-path: inset(0 calc(100% - var(--p, 55%)) 0 0);
+  will-change: clip-path;
+}
+
+.grade-frame-content {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fallback graphic scene if no image supplied */
+.grade-mock-scene {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #161B1D 0%, #1E2528 60%, #273035 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.grade-mock-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 65%;
+  background: radial-gradient(ellipse at 70% 30%, #62929E 0%, #273035 50%, #161B1D 100%);
+  opacity: 0.75;
+}
+
+.grade-mock-sun {
+  position: absolute;
+  top: 25%;
+  right: 20%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: #C6C5B9;
+  box-shadow: 0 0 50px #62929E;
+}
+
+.grade-mock-mountain {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 120px solid transparent;
+  border-right: 120px solid transparent;
+  border-bottom: 140px solid #1E2528;
+}
+
+.grade-mock-mountain-2 {
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+  width: 0;
+  height: 0;
+  border-left: 180px solid transparent;
+  border-right: 180px solid transparent;
+  border-bottom: 180px solid #161B1D;
+}
+
+/* Badges */
+.grade-chip {
+  position: absolute;
+  top: 14px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  background: rgba(30, 35, 40, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(139, 137, 130, 0.3);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.grade-chip.raw {
+  left: 14px;
+  color: var(--line);
+}
+
+.grade-chip.graded {
+  right: 14px;
+  color: var(--hi);
+  border-color: rgba(98, 146, 158, 0.5);
+}
+
+/* Draggable divider / Range input */
+.grade-divider-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--p, 55%);
+  width: 2px;
+  background-color: var(--accent);
+  box-shadow: 0 0 8px rgba(98, 146, 158, 0.75);
+  pointer-events: none;
+  z-index: 6;
+  transform: translateX(-50%);
+}
+
+.grade-divider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  border: 2px solid var(--hi-max);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grade-divider-handle svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--ink-950);
+}
+
+.grade-slider-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 10;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.grade-slider-input:focus-visible ~ .grade-divider-line {
+  outline: 2px solid var(--hi);
+  outline-offset: 4px;
+}

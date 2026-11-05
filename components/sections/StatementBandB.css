@@ -1,0 +1,136 @@
+.statement-band-b {
+  position: relative;
+  background-color: #0B0C0C;
+  color: #FAF8F5;
+  padding: clamp(64px, 10vw, 110px) clamp(16px, 4vw, 48px);
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid rgba(243, 239, 230, 0.12);
+  border-bottom: 1px solid rgba(243, 239, 230, 0.12);
+  background-image: radial-gradient(ellipse at 50% 50%, rgba(243, 239, 230, 0.05) 0%, transparent 70%);
+}
+
+.statement-b-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+/* Eyebrow Track Pills */
+.statement-b-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.8vw, 16px);
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.track-pill {
+  padding: 4px 12px;
+  border-radius: 6px;
+  background-color: rgba(243, 239, 230, 0.08);
+  border: 1px solid rgba(243, 239, 230, 0.16);
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.eyebrow-divider {
+  width: 24px;
+  height: 1px;
+  background-color: rgba(243, 239, 230, 0.25);
+}
+
+.eyebrow-text {
+  text-transform: uppercase;
+  color: var(--beige);
+  font-weight: 500;
+}
+
+/* 1-Line Typographic Lockup */
+.statement-b-headline-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.statement-b-headline {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  font-size: clamp(2rem, 5.4vw, 5.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: baseline;
+  gap: clamp(8px, 1.4vw, 18px);
+}
+
+.word-playfair {
+  font-family: var(--font-serif), 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  color: #F3EFE6;
+  text-shadow: 0 0 24px rgba(243, 239, 230, 0.2);
+}
+
+.word-dmsans {
+  font-family: var(--font-body), 'DM Sans', sans-serif;
+  font-weight: 800;
+  color: #FAF8F5;
+  letter-spacing: -0.04em;
+}
+
+.word-separator {
+  color: rgba(243, 239, 230, 0.35);
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+/* Audio Waveform Animation */
+.waveform-bar-graphic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 28px;
+  opacity: 0.5;
+}
+
+.waveform-bar {
+  width: 3px;
+  background-color: var(--cream);
+  border-radius: 999px;
+  animation: wavePulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: scaleY(0.3);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 0.85;
+  }
+}
+
+@media (max-width: 768px) {
+  .statement-band-b {
+    padding-block: 48px;
+  }
+
+  .eyebrow-divider,
+  .track-pill {
+    display: none;
+  }
+}

@@ -1,0 +1,38 @@
+.section-heading {
+  margin-bottom: clamp(32px, 5vw, 64px);
+}
+
+.section-chapter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--line);
+  margin-bottom: 12px;
+}
+
+.section-chapter-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.section-title-wrap {
+  margin: 0;
+  padding: 0;
+  line-height: 0.98;
+}
+
+.section-sub {
+  margin-top: 18px;
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1rem, 1.1vw, 1.1875rem);
+  line-height: 1.65;
+  color: var(--text);
+  max-width: 62ch;
+}

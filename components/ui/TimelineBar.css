@@ -1,0 +1,106 @@
+.timeline-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  z-index: 80;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.timeline-track-wrap {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.timeline-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(139, 137, 130, 0.35); /* --line at 35% */
+  transition: background-color 200ms ease;
+}
+
+html[data-tone='light'] .timeline-track {
+  background-color: rgba(30, 35, 40, 0.35);
+}
+
+.timeline-playhead-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--accent);
+  width: 0%;
+  pointer-events: none;
+}
+
+.timeline-playhead-thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  box-shadow: 0 0 6px rgba(108, 145, 194, 0.6);
+  pointer-events: none;
+}
+
+.timeline-tick {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 10px;
+  background-color: var(--line);
+  opacity: 0.6;
+  transition: all 180ms ease;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.timeline-tick:hover {
+  height: 16px;
+  background-color: var(--hi);
+  opacity: 1;
+}
+
+.timeline-timecode {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--line);
+  pointer-events: none;
+  background: rgba(30, 35, 40, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(139, 137, 130, 0.2);
+}
+
+html[data-tone='light'] .timeline-timecode {
+  color: var(--ink-950);
+  background: rgba(195, 201, 233, 0.75);
+  border-color: rgba(30, 35, 40, 0.2);
+}
+
+@media (max-width: 1023px) {
+  .timeline-timecode {
+    display: none;
+  }
+}

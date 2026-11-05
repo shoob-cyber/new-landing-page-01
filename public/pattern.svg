@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" fill="none">
+  <!-- Play triangle 1 -->
+  <polygon points="20,16 20,28 30,22" fill="#ffffff" fill-opacity="0.85" />
+  <!-- Plus mark 1 -->
+  <path d="M78,16 V28 M72,22 H84" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.85" />
+  <!-- Plus mark 2 -->
+  <path d="M22,76 V88 M16,82 H28" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-opacity="0.85" />
+  <!-- Play triangle 2 -->
+  <polygon points="76,76 76,88 86,82" fill="#ffffff" fill-opacity="0.85" />
+  <!-- Subtle center cross -->
+  <circle cx="50" cy="50" r="1.5" fill="#ffffff" fill-opacity="0.5" />
+  <circle cx="110" cy="110" r="1.5" fill="#ffffff" fill-opacity="0.5" />
+  <circle cx="110" cy="50" r="1.5" fill="#ffffff" fill-opacity="0.5" />
+  <circle cx="50" cy="110" r="1.5" fill="#ffffff" fill-opacity="0.5" />
+</svg>

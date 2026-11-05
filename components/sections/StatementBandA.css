@@ -1,0 +1,165 @@
+.statement-band-a {
+  position: relative;
+  background-color: #F4F0E8;
+  color: #0B0C0C;
+  padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 48px);
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid rgba(11, 12, 12, 0.15);
+  border-bottom: 1px solid rgba(11, 12, 12, 0.15);
+}
+
+/* 35mm Film Sprocket Strips */
+.film-sprockets {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 12px;
+  padding: 0 16px;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+.film-sprockets.top {
+  top: 12px;
+}
+
+.film-sprockets.bottom {
+  bottom: 12px;
+}
+
+.sprocket-hole {
+  width: 14px;
+  height: 9px;
+  background-color: #0B0C0C;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.statement-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+/* Premiere Pro Toolbar */
+.premiere-toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 14px);
+  background-color: rgba(11, 12, 12, 0.08);
+  border: 1px solid rgba(11, 12, 12, 0.12);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #262828;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tool-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tool-chip.active {
+  color: #0B0C0C;
+  font-weight: 700;
+}
+
+.tool-divider {
+  width: 1px;
+  height: 12px;
+  background-color: rgba(11, 12, 12, 0.2);
+}
+
+.tool-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #D32F2F;
+  box-shadow: 0 0 6px rgba(211, 47, 47, 0.6);
+  animation: recPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes recPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.mono-timecode {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: #0B0C0C;
+}
+
+.badge-fps {
+  background-color: #0B0C0C;
+  color: #F4F0E8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 9.5px;
+  letter-spacing: 0.05em;
+}
+
+/* Statement Single Line */
+.statement-single-line {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.statement-text-a {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 5.6vw, 5.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #0B0C0C;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Film Meta Sub-strip */
+.film-meta-sub {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(11, 12, 12, 0.6);
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .statement-band-a {
+    padding-block: 44px;
+  }
+
+  .tool-divider,
+  .film-meta-sub {
+    display: none;
+  }
+}

@@ -1,0 +1,68 @@
+.floating-chrome {
+  position: fixed;
+  top: 24px;
+  left: 0;
+  right: 0;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 85;
+}
+
+.chrome-pill {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: var(--ink-950);
+  box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 250ms cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+}
+
+.chrome-monogram {
+  width: 40px;
+  padding: 0;
+  letter-spacing: 0;
+}
+
+.chrome-pill:hover {
+  background-color: var(--hi);
+  color: var(--ink-950);
+  transform: translateY(-1px);
+}
+
+.chrome-pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Light tone state */
+html[data-tone='light'] .chrome-pill {
+  background-color: var(--ink-950);
+  color: var(--hi);
+  border-color: rgba(30, 35, 40, 0.2);
+}
+
+html[data-tone='light'] .chrome-pill:hover {
+  background-color: var(--ink-800);
+  color: var(--hi-max);
+}
+
+@media (max-width: 1023px) {
+  .floating-chrome {
+    display: none;
+  }
+}

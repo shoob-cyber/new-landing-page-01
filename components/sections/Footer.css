@@ -1,0 +1,115 @@
+.footer-section {
+  position: relative;
+  background-color: #0B0C0C;
+  border-top: 1px solid rgba(243, 239, 230, 0.12);
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 64px) clamp(40px, 5vw, 60px);
+  overflow: hidden;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(40px, 6vw, 64px);
+}
+
+/* Large CSS Outlined Wordmark */
+.footer-wordmark {
+  font-family: var(--font-display), sans-serif;
+  font-size: clamp(3.5rem, 14vw, 12rem);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(243, 239, 230, 0.22);
+  text-align: center;
+  user-select: none;
+  opacity: 0.45;
+  margin: 0;
+  transition: opacity 250ms ease, -webkit-text-stroke 250ms ease;
+}
+
+.footer-wordmark:hover {
+  opacity: 0.85;
+  -webkit-text-stroke: 1px var(--cream);
+}
+
+/* Navigation Links */
+.footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 36px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav-link {
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.footer-nav-link:hover {
+  color: var(--cream);
+}
+
+.footer-nav-link:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(243, 239, 230, 0.1);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.footer-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid rgba(243, 239, 230, 0.2);
+  padding: 6px 16px;
+  border-radius: 6px;
+  color: var(--cream);
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.footer-top-btn:hover {
+  border-color: var(--cream);
+  color: #0B0C0C;
+  background-color: var(--cream);
+}
+
+.footer-top-btn:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}

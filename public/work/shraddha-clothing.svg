@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1280" viewBox="0 0 720 1280">
+  <defs>
+    <linearGradient id="grad_shraddha-clothing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2328" />
+      <stop offset="50%" stop-color="#2A3138" />
+      <stop offset="100%" stop-color="#373F47" />
+    </linearGradient>
+    <radialGradient id="glow_shraddha-clothing" cx="65%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#6C91C2" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#C3C9E9" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#1E2328" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#grad_shraddha-clothing)" />
+  <rect width="100%" height="100%" fill="url(#glow_shraddha-clothing)" />
+
+  <!-- Frame border -->
+  <rect x="24" y="24" width="672" height="1232" rx="16" fill="none" stroke="#8B8982" stroke-width="1.5" stroke-opacity="0.28" />
+
+  <!-- Timecode & Metadata HUD -->
+  <text x="48" y="64" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#C3C9E9" letter-spacing="2">CAM_01 / REC [08]</text>
+  <text x="672" y="64" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="500" fill="#6C91C2" letter-spacing="1.5">0:36 / 24FPS</text>
+
+  <!-- Center Play glyph -->
+  <circle cx="360" cy="620" r="44" fill="#1E2328" fill-opacity="0.8" stroke="#6C91C2" stroke-width="2" />
+  <polygon points="350,604 350,636 376,620" fill="#EEF0FA" />
+
+  <!-- Badge & Title -->
+  <rect x="48" y="1150" width="100" height="26" rx="13" fill="#373F47" stroke="#6C91C2" stroke-width="1" />
+  <text x="62" y="1167" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" fill="#C3C9E9" letter-spacing="1.5">LOOKBOOK</text>
+  
+  <text x="48" y="1212" font-family="'Bricolage Grotesque', sans-serif" font-size="32" font-weight="700" fill="#EEF0FA" letter-spacing="-0.5">Shraddha Design Clothing</text>
+</svg>
