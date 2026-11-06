@@ -35,7 +35,7 @@ export default function About() {
               name={SITE.brandName}
               title={SITE.role}
               handle="sahabuddin.seikh28"
-              status="Available for commercial & reel projects"
+              status="Available for Projects"
               statusColor="#F3EFE6"
               contactText="Let's Work !"
               avatarUrl="/portrait.png"
@@ -113,11 +113,30 @@ export default function About() {
             <div className="about-tools-wrap">
               <span className="about-tools-label">SOFTWARE &amp; TECHNICAL CAPABILITIES</span>
               <div className="about-tools-list">
-                {SITE.tools.map((tool, idx) => (
-                  <span key={idx} className="about-tool-chip">
-                    {tool}
-                  </span>
-                ))}
+                {SITE.tools.map((tool, idx) => {
+                  const isObj = typeof tool === 'object';
+                  const name = isObj ? tool.name : tool;
+                  const badge = isObj ? tool.badge : null;
+                  const role = isObj ? tool.role : null;
+                  const color = isObj ? tool.color : '#F3EFE6';
+                  return (
+                    <div
+                      key={idx}
+                      className="about-tool-card"
+                      style={{ '--tool-accent': color }}
+                    >
+                      {badge && (
+                        <span className="about-tool-badge" style={{ borderColor: color, color }}>
+                          {badge}
+                        </span>
+                      )}
+                      <div className="about-tool-meta">
+                        <span className="about-tool-name">{name}</span>
+                        {role && <span className="about-tool-role">{role}</span>}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 

@@ -2,11 +2,12 @@
   position: relative;
   background-color: #F4F0E8;
   color: #0B0C0C;
-  padding: clamp(56px, 9vw, 96px) clamp(16px, 4vw, 48px);
+  padding: clamp(48px, 8vw, 88px) clamp(12px, 3vw, 40px);
   overflow: hidden;
   text-align: center;
   border-top: 1px solid rgba(11, 12, 12, 0.15);
   border-bottom: 1px solid rgba(11, 12, 12, 0.15);
+  width: 100%;
 }
 
 /* 35mm Film Sprocket Strips */
@@ -15,24 +16,26 @@
   left: 0;
   right: 0;
   display: flex;
-  justify-content: space-around;
-  gap: 12px;
-  padding: 0 16px;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 12px;
   pointer-events: none;
-  opacity: 0.28;
+  opacity: 0.25;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 .film-sprockets.top {
-  top: 12px;
+  top: 10px;
 }
 
 .film-sprockets.bottom {
-  bottom: 12px;
+  bottom: 10px;
 }
 
 .sprocket-hole {
-  width: 14px;
-  height: 9px;
+  width: 12px;
+  height: 8px;
   background-color: #0B0C0C;
   border-radius: 2px;
   flex-shrink: 0;
@@ -40,35 +43,38 @@
 
 .statement-container {
   max-width: 1360px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(16px, 2.5vw, 24px);
+  gap: clamp(14px, 2.2vw, 22px);
+  overflow: hidden;
 }
 
 /* Premiere Pro Toolbar */
 .premiere-toolbar {
   display: inline-flex;
   align-items: center;
-  gap: clamp(8px, 1.5vw, 14px);
+  gap: clamp(6px, 1.2vw, 12px);
   background-color: rgba(11, 12, 12, 0.08);
-  border: 1px solid rgba(11, 12, 12, 0.12);
-  padding: 6px 16px;
+  border: 1px solid rgba(11, 12, 12, 0.14);
+  padding: 5px 14px;
   border-radius: 999px;
   font-family: var(--font-mono), monospace;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.08em;
   color: #262828;
-  flex-wrap: wrap;
+  max-width: 100%;
   justify-content: center;
 }
 
 .tool-chip {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+  white-space: nowrap;
 }
 
 .tool-chip.active {
@@ -85,12 +91,13 @@
 .tool-meta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+  white-space: nowrap;
 }
 
 .rec-dot {
-  width: 7px;
-  height: 7px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background-color: #D32F2F;
   box-shadow: 0 0 6px rgba(211, 47, 47, 0.6);
@@ -99,7 +106,7 @@
 
 @keyframes recPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
+  50% { opacity: 0.35; transform: scale(0.85); }
 }
 
 .mono-timecode {
@@ -111,40 +118,43 @@
 .badge-fps {
   background-color: #0B0C0C;
   color: #F4F0E8;
-  padding: 2px 6px;
+  padding: 2px 5px;
   border-radius: 4px;
-  font-size: 9.5px;
+  font-size: 9px;
   letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
-/* Statement Single Line */
+/* Statement Single Line - Auto Fit */
 .statement-single-line {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  max-width: 100%;
 }
 
 .statement-text-a {
   font-family: var(--font-display), sans-serif;
   font-weight: 800;
-  font-size: clamp(1.8rem, 5.6vw, 5.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  font-size: clamp(2rem, 5.1vw, 4.8rem);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
   color: #0B0C0C;
   text-align: center;
   white-space: nowrap;
   margin: 0;
   padding: 0;
   display: block;
+  max-width: 100%;
 }
 
 /* Film Meta Sub-strip */
 .film-meta-sub {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   font-family: var(--font-mono), monospace;
   font-size: 11px;
   font-weight: 600;
@@ -153,9 +163,37 @@
   text-transform: uppercase;
 }
 
+/* Tablet Scaling */
 @media (max-width: 768px) {
   .statement-band-a {
-    padding-block: 44px;
+    padding-block: 40px;
+  }
+
+  .statement-text-a {
+    font-size: clamp(1.4rem, 4.8vw, 2.4rem);
+    letter-spacing: -0.02em;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+}
+
+/* Mobile Scaling - Guaranteed to fit on 1 line on any phone */
+@media (max-width: 480px) {
+  .statement-band-a {
+    padding: 34px 8px;
+  }
+
+  .statement-text-a {
+    font-size: clamp(0.92rem, 4.7vw, 1.38rem);
+    letter-spacing: -0.01em;
+  }
+
+  .premiere-toolbar {
+    font-size: 10px;
+    padding: 4px 10px;
+    gap: 6px;
   }
 
   .tool-divider,

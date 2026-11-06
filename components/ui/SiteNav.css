@@ -6,12 +6,18 @@
   z-index: 100;
   padding: 18px clamp(16px, 3.5vw, 40px);
   pointer-events: none;
-  transition: padding 250ms ease, background-color 250ms ease;
+  background-color: transparent;
+  transition: padding 260ms ease, background-color 260ms ease, backdrop-filter 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
 }
 
 .site-header.is-scrolled {
   padding-top: 12px;
   padding-bottom: 12px;
+  background-color: rgba(11, 12, 12, 0.72);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom: 1px solid rgba(243, 239, 230, 0.08);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.85);
 }
 
 .site-header-inner {

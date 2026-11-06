@@ -65,6 +65,148 @@
   min-height: 240px;
 }
 
+/* Scroll-Reactive Vault Explorer Button - Bottom Right */
+.bounce-deck-cta-row {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 18px;
+  padding-right: 8px;
+}
+
+.explore-vault-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 18px 10px 20px;
+  border-radius: 999px;
+  background: rgba(19, 20, 20, 0.92);
+  border: 1px solid rgba(243, 239, 230, 0.22);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--cream);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 260ms cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-vault-btn::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(243, 239, 230, 0.4), rgba(197, 168, 128, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.explore-vault-btn.glow-active {
+  border-color: rgba(243, 239, 230, 0.55);
+  box-shadow: 0 0 30px rgba(243, 239, 230, 0.28), 0 8px 28px -4px rgba(0, 0, 0, 0.9);
+  animation: vaultPulse 2.8s ease-in-out infinite;
+}
+
+.explore-vault-btn.glow-active::before {
+  opacity: 0.6;
+}
+
+@keyframes vaultPulse {
+  0%, 100% {
+    box-shadow: 0 0 22px rgba(243, 239, 230, 0.2), 0 8px 28px -4px rgba(0, 0, 0, 0.9);
+    border-color: rgba(243, 239, 230, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 38px rgba(243, 239, 230, 0.45), 0 0 16px rgba(197, 168, 128, 0.3), 0 12px 34px -4px rgba(0, 0, 0, 0.95);
+    border-color: rgba(243, 239, 230, 0.7);
+  }
+}
+
+.explore-vault-btn:hover {
+  transform: translateY(-2px);
+  background: var(--cream);
+  color: #0B0C0C;
+  border-color: #FFFFFF;
+  box-shadow: 0 0 35px rgba(243, 239, 230, 0.5), 0 14px 36px -6px rgba(0, 0, 0, 0.9);
+}
+
+.explore-vault-btn:hover .explore-badge {
+  background: rgba(11, 12, 12, 0.12);
+  color: #0B0C0C;
+  border-color: rgba(11, 12, 12, 0.2);
+}
+
+.explore-vault-btn:hover .explore-arrow-wrap {
+  transform: translateX(3px);
+  background: #0B0C0C;
+  color: var(--cream);
+}
+
+.explore-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.explore-sparkle {
+  color: var(--cream);
+  font-size: 13px;
+  animation: sparkleTwinkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkleTwinkle {
+  0%, 100% { opacity: 0.6; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.explore-heading {
+  font-family: var(--font-display), sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.explore-badge {
+  font-family: var(--font-mono), monospace;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(243, 239, 230, 0.1);
+  border: 1px solid rgba(243, 239, 230, 0.18);
+  color: var(--beige);
+  transition: all 200ms ease;
+}
+
+.explore-arrow-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(243, 239, 230, 0.12);
+  color: var(--cream);
+  transition: all 220ms ease;
+}
+
+@media (max-width: 640px) {
+  .bounce-deck-cta-row {
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .explore-vault-btn {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+}
+
 /* Toolbar: Filters & View Switch */
 .work-toolbar {
   display: flex;

@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { PROJECTS, getFilteredProjects } from '@/lib/projects';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
@@ -20,6 +21,20 @@ export default function Work({ onSelectProject }) {
   const [filter, setFilter] = useState('all');
   const [viewMode, setViewMode] = useState('pan'); // 'pan' or 'grid'
   const triggerRef = useRef(null);
+  const exploreBtnRef = useRef(null);
+  const [isBtnGlowing, setIsBtnGlowing] = useState(false);
+
+  useEffect(() => {
+    if (!exploreBtnRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsBtnGlowing(entry.isIntersecting);
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(exploreBtnRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const { matches: isMobile } = useMediaQuery('(max-width: 767px)');
   const { matches: isTablet } = useMediaQuery('(max-width: 1024px)');
@@ -109,6 +124,27 @@ export default function Work({ onSelectProject }) {
                 if (picked) handleCardClick(picked);
               }}
             />
+          </div>
+
+          {/* Creative Scroll-Reactive Vault Button - Bottom Right */}
+          <div className="bounce-deck-cta-row">
+            <Link
+              href="/vault"
+              ref={exploreBtnRef}
+              className={`explore-vault-btn ${isBtnGlowing ? 'glow-active' : ''}`}
+              aria-label="Wanna explore more? Open the full video vault"
+            >
+              <div className="explore-btn-content">
+                <span className="explore-sparkle" aria-hidden="true">✦</span>
+                <span className="explore-heading">Wanna explore more?</span>
+                <span className="explore-badge">Vault // 22+ Edits</span>
+              </div>
+              <span className="explore-arrow-wrap" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
 

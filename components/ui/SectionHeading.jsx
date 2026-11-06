@@ -21,7 +21,7 @@ export default function SectionHeading({
       {chapter && label && (
         <div className="section-chapter">
           <span className="section-chapter-dot" />
-          <span>{chapter} / {label}</span>
+          <span>{chapter} // {label}</span>
         </div>
       )}
 
@@ -34,7 +34,7 @@ export default function SectionHeading({
           duration={0.65}
           stagger={0.04}
           fontWeight={800}
-          fontSize="clamp(2.5rem, 7vw, 5.5rem)"
+          fontSize="clamp(2.8rem, 7.5vw, 6.2rem)"
           splitBy={splitBy}
           hoverRefold={hoverRefold}
           refoldRadius={refoldRadius}

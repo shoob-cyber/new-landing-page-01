@@ -1,38 +1,66 @@
 .section-heading {
-  margin-bottom: clamp(32px, 5vw, 64px);
+  margin-bottom: clamp(40px, 6vw, 72px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
 }
 
 .section-chapter {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 11.5px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  color: var(--line);
-  margin-bottom: 12px;
+  letter-spacing: 0.16em;
+  color: var(--beige);
+  margin-bottom: 14px;
+  background-color: rgba(243, 239, 230, 0.06);
+  border: 1px solid rgba(243, 239, 230, 0.14);
+  padding: 4px 14px;
+  border-radius: 999px;
 }
 
 .section-chapter-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--accent);
+  background-color: var(--cream);
+  box-shadow: 0 0 6px var(--cream);
 }
 
 .section-title-wrap {
   margin: 0;
   padding: 0;
-  line-height: 0.98;
+  line-height: 0.96;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title-wrap > div,
+.section-title-wrap .fold-text {
+  margin-inline: auto;
+  text-align: center;
+  justify-content: center;
 }
 
 .section-sub {
   margin-top: 18px;
   font-family: var(--font-body), sans-serif;
-  font-size: clamp(1rem, 1.1vw, 1.1875rem);
+  font-size: clamp(1.02rem, 1.25vw, 1.25rem);
   line-height: 1.65;
   color: var(--text);
-  max-width: 62ch;
+  max-width: 64ch;
+  text-align: center;
+  margin-inline: auto;
 }
