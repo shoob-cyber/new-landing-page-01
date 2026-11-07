@@ -38,7 +38,7 @@ export default function About() {
               status="Available for Projects"
               statusColor="#F3EFE6"
               contactText="Let's Work !"
-              avatarUrl="/portrait.png"
+              avatarUrl="/portrait.jpg"
               iconUrl="/pattern.svg"
               backdropColor="#141515"
               theme="dark"
