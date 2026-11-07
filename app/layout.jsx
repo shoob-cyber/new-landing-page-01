@@ -14,7 +14,7 @@ export const metadata = {
   keywords: [
     'video editor',
     'colorist',
-    'DaVinci Resolve',
+    'Color Grading',
     'Premiere Pro',
     'commercial video editor',
     'shorts editor',

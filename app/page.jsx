@@ -53,7 +53,7 @@ export default function Home() {
       category: 'long-form',
       year: '2025',
       runtime: '2:15',
-      tools: ['DaVinci Resolve', 'Premiere Pro', 'Sound Design'],
+      tools: ['Premiere Pro', 'After Effects', 'Sound Design'],
       description: 'A master cut of creative commercial, fashion, architectural, and high-retention social edits.',
       video: SITE.showreelUrl,
       youtubeUrl: SITE.showreelRaw,

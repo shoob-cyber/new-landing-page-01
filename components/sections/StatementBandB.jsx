@@ -5,10 +5,17 @@ import './StatementBandB.css';
 export default function StatementBandB() {
   return (
     <aside
-      data-tone="dark"
+      data-tone="light"
       className="statement-band-b"
       aria-label="Artistic Philosophy Statement"
     >
+      {/* 35mm Film Sprocket Perforation - Top */}
+      <div className="film-sprockets top" aria-hidden="true">
+        {Array.from({ length: 24 }).map((_, i) => (
+          <span key={`b-top-${i}`} className="sprocket-hole" />
+        ))}
+      </div>
+
       <div className="statement-b-inner">
         {/* Editorial Eyebrow with Timeline Tracks */}
         <div className="statement-b-eyebrow" aria-hidden="true">
@@ -16,7 +23,7 @@ export default function StatementBandB() {
           <span className="eyebrow-divider" />
           <span className="eyebrow-text">DIRECTOR&apos;S PHILOSOPHY</span>
           <span className="eyebrow-divider" />
-          <span className="track-pill">A1 // SFX & RHYTHM</span>
+          <span className="track-pill">A1 // SFX &amp; RHYTHM</span>
         </div>
 
         {/* 1-Line Creative Combination of DM Sans Bold & Playfair Display */}
@@ -43,6 +50,22 @@ export default function StatementBandB() {
             />
           ))}
         </div>
+
+        {/* Film metadata sub-strip */}
+        <div className="film-meta-sub" aria-hidden="true">
+          <span>SCENE 02</span>
+          <span>&bull;</span>
+          <span>PHILOSOPHY</span>
+          <span>&bull;</span>
+          <span>SHOBU // 24 FPS</span>
+        </div>
+      </div>
+
+      {/* 35mm Film Sprocket Perforation - Bottom */}
+      <div className="film-sprockets bottom" aria-hidden="true">
+        {Array.from({ length: 24 }).map((_, i) => (
+          <span key={`b-bot-${i}`} className="sprocket-hole" />
+        ))}
       </div>
     </aside>
   );

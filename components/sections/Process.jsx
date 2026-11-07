@@ -13,7 +13,7 @@ const CLIPS_CONFIG = [
   { step: '01', track: 'V1', left: 2, width: 20, time: 'Day 0', title: 'Brief & References', desc: 'Narrative targets, visual references, and pacing benchmarks.' },
   { step: '02', track: 'V2', left: 21, width: 20, time: 'Day 1', timeEnd: 41, title: 'Assembly & Selects', desc: 'Multicam sync, sound sync, and pulling the strongest story takes.' },
   { step: '03', track: 'A1', left: 40, width: 22, time: 'Days 2–3', timeEnd: 62, title: 'Rough Cut & Rhythm', desc: 'Sculpting pacing, tension, narrative rhythm, and initial draft.' },
-  { step: '04', track: 'V1', left: 61, width: 20, time: 'Days 4–5', timeEnd: 81, title: 'Fine Cut, Sound & Grade', desc: 'DaVinci color science, Foley SFX, motion graphics, and audio mastering.' },
+  { step: '04', track: 'V1', left: 61, width: 20, time: 'Days 4–5', timeEnd: 81, title: 'Fine Cut, Sound & Grade', desc: 'Cinematic color grading, Foley SFX, motion graphics, and audio mastering.' },
   { step: '05', track: 'A1', left: 80, width: 18, time: 'Day 6', timeEnd: 98, title: 'Review & Delivery', desc: 'Client review notes incorporated, master ProRes / 4K multi-platform export.' }
 ];
 

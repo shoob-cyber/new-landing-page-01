@@ -3,6 +3,32 @@
 import { SITE } from '@/lib/site';
 import './Faq.css';
 
+function renderAnswer(text) {
+  const urlRegex = /(https?:\/\/[^\s)]+)/g;
+  const parts = text.split(urlRegex);
+  return parts.map((part, i) => {
+    if (part.startsWith('http://') || part.startsWith('https://')) {
+      return (
+        <a
+          key={i}
+          href={part}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            color: 'var(--cream, #F3EFE6)',
+            textDecoration: 'underline',
+            textUnderlineOffset: '3px',
+            fontWeight: 600
+          }}
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+}
+
 export default function Faq() {
   const faqs = SITE.faqs || [];
 
@@ -18,7 +44,7 @@ export default function Faq() {
               </svg>
             </summary>
             <div className="faq-content">
-              <p style={{ margin: 0 }}>{faq.a}</p>
+              <p style={{ margin: 0 }}>{renderAnswer(faq.a)}</p>
             </div>
           </details>
         ))}

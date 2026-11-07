@@ -1,63 +1,101 @@
 .statement-band-b {
   position: relative;
-  background-color: #0B0C0C;
-  color: #FAF8F5;
-  padding: clamp(64px, 10vw, 110px) clamp(16px, 4vw, 48px);
+  background-color: #F4F0E8;
+  color: #0B0C0C;
+  padding: clamp(48px, 8vw, 88px) clamp(12px, 3vw, 40px);
   overflow: hidden;
   text-align: center;
-  border-top: 1px solid rgba(243, 239, 230, 0.12);
-  border-bottom: 1px solid rgba(243, 239, 230, 0.12);
-  background-image: radial-gradient(ellipse at 50% 50%, rgba(243, 239, 230, 0.05) 0%, transparent 70%);
+  border-top: 1px solid rgba(11, 12, 12, 0.15);
+  border-bottom: 1px solid rgba(11, 12, 12, 0.15);
+  width: 100%;
+}
+
+/* 35mm Film Sprocket Strips */
+.statement-band-b .film-sprockets {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 12px;
+  pointer-events: none;
+  opacity: 0.25;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.statement-band-b .film-sprockets.top {
+  top: 10px;
+}
+
+.statement-band-b .film-sprockets.bottom {
+  bottom: 10px;
+}
+
+.statement-band-b .sprocket-hole {
+  width: 12px;
+  height: 8px;
+  background-color: #0B0C0C;
+  border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .statement-b-inner {
   max-width: 1360px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(20px, 3vw, 32px);
+  gap: clamp(14px, 2.2vw, 24px);
+  overflow: visible;
 }
 
 /* Eyebrow Track Pills */
 .statement-b-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: clamp(8px, 1.8vw, 16px);
+  gap: clamp(8px, 1.5vw, 14px);
   font-family: var(--font-mono), monospace;
   font-size: 11px;
-  letter-spacing: 0.14em;
-  color: var(--text);
+  letter-spacing: 0.12em;
+  color: #262828;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: rgba(11, 12, 12, 0.08);
+  border: 1px solid rgba(11, 12, 12, 0.14);
+  padding: 5px 16px;
+  border-radius: 999px;
 }
 
-.track-pill {
-  padding: 4px 12px;
-  border-radius: 6px;
-  background-color: rgba(243, 239, 230, 0.08);
-  border: 1px solid rgba(243, 239, 230, 0.16);
-  color: var(--cream);
-  font-weight: 600;
-  font-size: 10px;
+.statement-band-b .track-pill {
+  padding: 2px 8px;
+  border-radius: 4px;
+  background-color: #0B0C0C;
+  color: #F4F0E8;
+  font-weight: 700;
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
 }
 
-.eyebrow-divider {
-  width: 24px;
+.statement-band-b .eyebrow-divider {
+  width: 16px;
   height: 1px;
-  background-color: rgba(243, 239, 230, 0.25);
+  background-color: rgba(11, 12, 12, 0.25);
 }
 
-.eyebrow-text {
+.statement-band-b .eyebrow-text {
   text-transform: uppercase;
-  color: var(--beige);
-  font-weight: 500;
+  color: #0B0C0C;
+  font-weight: 700;
+  font-size: 10.5px;
 }
 
 /* 1-Line Typographic Lockup */
 .statement-b-headline-wrap {
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -65,72 +103,118 @@
 
 .statement-b-headline {
   margin: 0;
-  padding: 0;
+  padding: 0 4px;
   white-space: nowrap;
-  font-size: clamp(2rem, 5.4vw, 5.5rem);
+  font-size: clamp(1.2rem, 3.8vw, 3.4rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
   display: inline-flex;
   align-items: baseline;
+  justify-content: center;
   gap: clamp(8px, 1.4vw, 18px);
+  color: #0B0C0C;
 }
 
 .word-playfair {
   font-family: var(--font-serif), 'Playfair Display', serif;
   font-style: italic;
   font-weight: 600;
-  color: #F3EFE6;
-  text-shadow: 0 0 24px rgba(243, 239, 230, 0.2);
+  color: #0B0C0C;
+  letter-spacing: -0.01em;
 }
 
 .word-dmsans {
   font-family: var(--font-body), 'DM Sans', sans-serif;
   font-weight: 800;
-  color: #FAF8F5;
-  letter-spacing: -0.04em;
+  color: #0B0C0C;
+  letter-spacing: -0.035em;
 }
 
 .word-separator {
-  color: rgba(243, 239, 230, 0.35);
+  color: rgba(11, 12, 12, 0.4);
   font-size: 0.6em;
   vertical-align: middle;
 }
 
-/* Audio Waveform Animation */
+/* Audio Waveform Graphic */
 .waveform-bar-graphic {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 4px;
-  height: 28px;
-  opacity: 0.5;
+  height: 24px;
+  opacity: 0.45;
 }
 
 .waveform-bar {
   width: 3px;
-  background-color: var(--cream);
+  background-color: #0B0C0C;
   border-radius: 999px;
-  animation: wavePulse 1.8s ease-in-out infinite alternate;
+  animation: wavePulseB 1.8s ease-in-out infinite alternate;
 }
 
-@keyframes wavePulse {
+@keyframes wavePulseB {
   0% {
     transform: scaleY(0.3);
     opacity: 0.3;
   }
   100% {
     transform: scaleY(1);
-    opacity: 0.85;
+    opacity: 0.9;
   }
 }
 
-@media (max-width: 768px) {
+/* Film Meta Sub-strip */
+.statement-band-b .film-meta-sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: rgba(11, 12, 12, 0.6);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
   .statement-band-b {
-    padding-block: 48px;
+    padding-block: 42px;
   }
 
-  .eyebrow-divider,
-  .track-pill {
+  .statement-b-headline {
+    font-size: clamp(1rem, 3.8vw, 2.4rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .statement-band-b {
+    padding: 34px 10px;
+  }
+
+  .statement-b-headline {
+    font-size: clamp(0.85rem, 4.3vw, 1.35rem);
+    gap: 6px;
+  }
+
+  .statement-band-b .track-pill,
+  .statement-band-b .eyebrow-divider,
+  .statement-band-b .film-meta-sub {
     display: none;
+  }
+
+  .statement-b-eyebrow {
+    font-size: 10px;
+    padding: 4px 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .statement-band-b {
+    padding: 28px 6px;
+  }
+
+  .statement-b-headline {
+    font-size: clamp(0.74rem, 4.1vw, 0.98rem);
   }
 }

@@ -104,7 +104,7 @@ export default function VaultPage() {
           </div>
           <h1 className="vault-hero-title">The Complete Video Vault</h1>
           <p className="vault-hero-sub">
-            All 22 commercial films, viral retention cuts, fashion campaigns, and live event recaps. Click any card to launch full high-definition master playback.
+            Turning raw bulk footage into high-retention, top-performing reels and campaigns. Click any cut to launch full high-definition master playback.
           </p>
         </div>
 

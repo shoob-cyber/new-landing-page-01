@@ -89,7 +89,7 @@ export default function Work({ onSelectProject }) {
           chapter="01"
           label="PORTFOLIO"
           title="Selected Work"
-          sub="Explore 22 commercial films, retention-engineered vertical edits, and narrative campaigns."
+          sub="Turning raw bulk footage into high-retention, top-performing reels that convert and scale on socials."
         />
 
         {/* Interactive Feature Deck: BounceCards */}

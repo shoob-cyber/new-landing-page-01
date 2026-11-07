@@ -161,17 +161,21 @@ export default function Hero({ onOpenShowreel }) {
         <p className="hero-tagline">{SITE.hero.tagline}</p>
 
         <div className="hero-cta-row">
-          <button
-            type="button"
+          <a
+            href="#work"
             className="btn-primary"
-            onClick={onOpenShowreel}
-            aria-label="Watch Showreel Video"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            aria-label="Explore Selected Work"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <polygon points="5 3 19 12 5 21 5 3" />
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+              <rect x="2" y="7" width="20" height="10" rx="2" />
+              <path d="M12 7v10M7 7v10M17 7v10" />
             </svg>
             <span>{SITE.hero.primaryCta}</span>
-          </button>
+          </a>
 
           <a
             href="#contact"
