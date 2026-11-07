@@ -67,6 +67,7 @@ export default function StatementBandA() {
             effect="float"
             splitBy="chars"
             fromColor="#8E8A82"
+            containerClassName="statement-scroll-float"
             textClassName="statement-text-a"
           >
             EVERY CUT HAS A REASON.
