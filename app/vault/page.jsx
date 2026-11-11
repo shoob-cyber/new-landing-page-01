@@ -10,7 +10,7 @@ import '@/components/sections/Work.css';
 import './vault.css';
 
 const FILTERS = [
-  { id: 'all', label: 'All Projects (22)' },
+  { id: 'all', label: `All Projects (${PROJECTS.length})` },
   { id: 'shorts', label: 'Shorts & Reels' },
   { id: 'ads', label: 'Commercials & Ads' },
   { id: 'long-form', label: 'Narrative & Showreel' }
@@ -86,7 +86,7 @@ export default function VaultPage() {
 
           <div className="vault-header-title">
             <span className="vault-rec-dot" />
-            <span>SHOBU // COMPLETE 22+ VIDEO ARCHIVE</span>
+            <span>SHOBU // COMPLETE {PROJECTS.length} VIDEO ARCHIVE</span>
           </div>
 
           <Link href="/#contact" className="vault-contact-link">
